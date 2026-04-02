@@ -48,7 +48,7 @@ def scrape_indo_news_batch(
 
             try:
                 # Set language to 'id' for better parsing of Indonesian sites
-                article = Article(entry.link, language="id")
+                article = Article(entry.link, language="id")  # type: ignore[arg-type]
                 article.download()
                 article.parse()
 
@@ -57,7 +57,7 @@ def scrape_indo_news_batch(
                         "keyword": topic,
                         "judul": article.title,
                         "tanggal": article.publish_date,
-                        "sumber": entry.source.get("title", "N/A")
+                        "sumber": entry.source.get("title", "N/A")  # type: ignore[arg-type]
                         if hasattr(entry, "source")
                         else "N/A",
                         "url": entry.link,
