@@ -136,7 +136,7 @@ def run_scraper(
 if __name__ == "__main__":
     run_scraper(
         keyword_file="src/keyword.txt",
-        output_file="berita_all_keywords.csv",
+        output_file="out/berita_all_keywords.csv",
         limit_per_keyword=None,
         max_concurrent=5,
     )
