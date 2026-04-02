@@ -9,4 +9,7 @@ dependencies = [
     "newspaper4k>=0.9.5",
     "nltk>=3.9.4",
     "pandas>=3.0.2",
+    "playwright>=1.58.0",
+    "requests>=2.33.1",
+    "tqdm>=4.67.3",
 ]

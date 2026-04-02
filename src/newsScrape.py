@@ -3,7 +3,25 @@ import time
 
 import feedparser
 import pandas as pd
+import requests
 from newspaper import Article
+
+
+def resolve_redirect_url(redirect_url, timeout=10):
+    """Follow redirect to get actual URL using HEAD request."""
+    try:
+        response = requests.head(
+            redirect_url,
+            allow_redirects=True,
+            timeout=timeout,
+            headers={
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+            },
+        )
+        return response.url
+    except Exception as e:
+        print(f"  Redirect resolution failed: {e}")
+        return redirect_url
 
 
 def read_keywords(filepath):
@@ -47,27 +65,31 @@ def scrape_indo_news_batch(
                 continue
 
             try:
-                # Set language to 'id' for better parsing of Indonesian sites
-                article = Article(entry.link, language="id")  # type: ignore[arg-type]
+                # Step 1: Resolve redirect URL to get actual article URL
+                actual_url = resolve_redirect_url(entry.link)
+
+                # Step 2: Use resolved URL for article extraction
+                article = Article(actual_url, language="id")  # type: ignore[arg-type]
                 article.download()
                 article.parse()
 
+                # Step 3: Use resolved URL and original RSS title
                 all_results.append(
                     {
                         "keyword": topic,
-                        "judul": article.title,
+                        "judul": entry.title,
                         "tanggal": article.publish_date,
                         "sumber": entry.source.get("title", "N/A")  # type: ignore[arg-type]
                         if hasattr(entry, "source")
                         else "N/A",
-                        "url": entry.link,
+                        "url": actual_url,
                         "konten": article.text,
                         "tags": ", ".join(article.tags) if article.tags else "",
                     }
                 )
                 seen_urls.add(entry.link)
                 success_count += 1
-                print(f"Berhasil: {article.title[:50]}...")
+                print(f"Berhasil: {entry.title[:50]}...")
                 time.sleep(1.5)  # Slightly longer delay for Indo servers
 
             except Exception as e:
@@ -97,8 +119,8 @@ if __name__ == "__main__":
             # Batasi limit_per_keyword untuk testing jika perlu
             scrape_indo_news_batch(
                 keywords_to_scrape,
-                limit_per_keyword=500,
-                output_file="berita_all_keywords.csv",
+                limit_per_keyword=5,
+                output_file="out/berita_all_keywords_test.csv",
             )
         else:
             print("Tidak ada keyword valid di dalam file.")
