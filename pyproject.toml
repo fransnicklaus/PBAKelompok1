@@ -20,5 +20,6 @@ dependencies = [
     "pycld2>=0.42",
     "pyicu>=2.16.2",
     "requests>=2.33.1",
+    "scikit-learn>=1.8.0",
     "tqdm>=4.67.3",
 ]
