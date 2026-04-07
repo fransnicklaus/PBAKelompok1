@@ -1,3 +1,5 @@
 */__pycache__
-*.venv
-*.vscode
+
+.venv/
+.vscode/
+.ruff_cache/
