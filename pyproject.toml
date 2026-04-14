@@ -7,7 +7,6 @@ requires-python = ">=3.12"
 dependencies = [
     "beautifulsoup4>=4.14.3",
     "feedparser>=6.0.12",
-    "icu>=0.0.1",
     "ipykernel>=7.2.0",
     "matplotlib>=3.10.8",
     "morfessor>=2.0.6",
@@ -19,7 +18,13 @@ dependencies = [
     "polyglot>=16.7.4",
     "pycld2>=0.42",
     "pyicu>=2.16.2",
+    "pysastrawi>=1.2.0",
     "requests>=2.33.1",
     "scikit-learn>=1.8.0",
+    "spacy>=3.8.14",
+    "stanza>=1.11.1",
+    "textblob>=0.20.0",
     "tqdm>=4.67.3",
+    "transformers>=5.5.4",
+    "wordcloud>=1.9.6",
 ]
