@@ -1559,7 +1559,6 @@ dependencies = [
     { name = "pandas" },
     { name = "pip" },
     { name = "playwright" },
-    { name = "polyglot" },
     { name = "pycld2" },
     { name = "pyicu" },
     { name = "pysastrawi" },
@@ -1585,7 +1584,6 @@ requires-dist = [
     { name = "pandas", specifier = ">=3.0.2" },
     { name = "pip", specifier = ">=26.0.1" },
     { name = "playwright", specifier = ">=1.58.0" },
-    { name = "polyglot", specifier = ">=16.7.4" },
     { name = "pycld2", specifier = ">=0.42" },
     { name = "pyicu", specifier = ">=2.16.2" },
     { name = "pysastrawi", specifier = ">=1.2.0" },
@@ -1716,12 +1714,6 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/41/f8/5ec599c5e59d2f2f336a05b4f318e733077cd5044f24adb6f86900c3e6a7/playwright-1.58.0-py3-none-win_amd64.whl", hash = "sha256:a2bf639d0ce33b3ba38de777e08697b0d8f3dc07ab6802e4ac53fb65e3907af8", size = 36816005, upload-time = "2026-01-30T15:09:42.449Z" },
     { url = "https://files.pythonhosted.org/packages/c8/c4/cc0229fea55c87d6c9c67fe44a21e2cd28d1d558a5478ed4d617e9fb0c93/playwright-1.58.0-py3-none-win_arm64.whl", hash = "sha256:32ffe5c303901a13a0ecab91d1c3f74baf73b84f4bedbb6b935f5bc11cc98e1b", size = 33085919, upload-time = "2026-01-30T15:09:45.71Z" },
 ]
-
-[[package]]
-name = "polyglot"
-version = "16.7.4"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/e7/98/e24e2489114c5112b083714277204d92d372f5bbe00d5507acf40370edb9/polyglot-16.7.4.tar.gz", hash = "sha256:f7d9cca9a212622548e9416fb89f1238b994b8860ef49e03b7c82c67f9b6269b", size = 126296, upload-time = "2016-07-03T20:05:42.197Z" }
 
 [[package]]
 name = "preshed"

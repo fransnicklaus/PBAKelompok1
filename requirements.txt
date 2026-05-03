@@ -1155,9 +1155,6 @@ playwright==1.58.0 \
     --hash=sha256:a2bf639d0ce33b3ba38de777e08697b0d8f3dc07ab6802e4ac53fb65e3907af8 \
     --hash=sha256:c95568ba1eda83812598c1dc9be60b4406dffd60b149bc1536180ad108723d6b
     # via pbakelompok1
-polyglot==16.7.4 \
-    --hash=sha256:f7d9cca9a212622548e9416fb89f1238b994b8860ef49e03b7c82c67f9b6269b
-    # via pbakelompok1
 preshed==3.0.13 \
     --hash=sha256:04d8f13f2986e5d11af5ac51f55ce3106c70c41b483d20ea392e6180bdd0f870 \
     --hash=sha256:09f96b477c987755b3c945df214ea1c1c80bfb350e9f34e78da89585535b77e8 \
